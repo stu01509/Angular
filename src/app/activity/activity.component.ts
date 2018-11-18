@@ -24,6 +24,7 @@ export class ActivityComponent implements OnInit {
     desc: '',
     add: '',
     group: '',
+    act: '',
     tel: '',
     date: '',
     endTime: '',
@@ -31,7 +32,8 @@ export class ActivityComponent implements OnInit {
     addDetail: '',
     startTime: '',
     ticketPrice: '',
-    ticketUrl: ''
+    ticketUrl: '',
+    website: '',
   };
 
 
@@ -91,8 +93,38 @@ export class ActivityComponent implements OnInit {
     console.log(type, activityData);
     if (type === 'program') {
 
+      this.modal.titile  = activityData.PRGNAME;
+      this.modal.imgUrl = activityData.IMAGE1;
+      this.modal.desc = activityData.ITEMDESC;
+      this.modal.tel = activityData.PRGCONT;
+      this.modal.add = activityData.ORGNAME;
+      this.modal.addDetail = activityData.PRGPLACE;
+      this.modal.act = activityData.PRGACT;
+      this.modal.group = activityData.PRGAG;
+      this.modal.date = activityData.PRGDATE;
+      this.modal.startTime = activityData.PRGSTIME;
+      this.modal.endTime = activityData.PRGETIME;
+      this.modal.id = activityData.PRGID;
+      this.modal.ticketPrice = activityData.PRGTICKET;
+      this.modal.ticketUrl = activityData.TICKETSYSURL;
+
     } else if (type === 'nogov') {
 
+      this.modal.titile  = activityData.PUBART_TITLE;
+      this.modal.imgUrl = activityData.PUBART_IMAGE;
+      this.modal.desc = activityData.PUBART_DESC;
+      this.modal.tel = activityData.PRGCONT;
+      this.modal.add = activityData.ORGNAME;
+      this.modal.addDetail = activityData.PRGPLACE;
+      this.modal.act = activityData.PUBART_ACTOR;
+      this.modal.group = activityData.PUBART_ACTUNIT;
+      this.modal.date = activityData.PUBART_ACTTOP;
+      this.modal.startTime = activityData.PRGSTIME;
+      this.modal.endTime = activityData.PRGETIME;
+      this.modal.id = activityData.PUBART_INDEX;
+      this.modal.ticketPrice = activityData.PUBART_TICKETPRICE;
+      this.modal.ticketUrl = activityData.PUBART_TICKETURL;
+      this.modal.website = activityData.PUBART_URL;
     } else if (type === 'news') {
 
     } else if (type === 'library') {
