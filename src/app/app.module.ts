@@ -3,26 +3,45 @@ import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { FormsModule } from '@angular/forms';
+
 import { AppRoutingModule, routeComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
-// import { ProductComponent } from './product/product.component';
-// import { AboutComponent } from './about/about.component';
+import { SiteComponent } from './site/site.component';
+import { FoodComponent } from './food/food.component';
+import { ActivityComponent } from './activity/activity.component';
+import { TrafficComponent } from './traffic/traffic.component';
+import { AboutComponent } from './about/about.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ScrollEventDirective } from './scroll-event.directive';
+import { BusInfoComponent } from './bus-info/bus-info.component';
+import { BikeInfoComponent } from './bike-info/bike-info.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routeComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    SiteComponent,
+    FoodComponent,
+    ActivityComponent,
+    TrafficComponent,
+    AboutComponent,
+    NotFoundComponent,
+    ScrollEventDirective,
+    BusInfoComponent,
+    BikeInfoComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule.forRoot()
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,11 @@
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.site {
+  height: 450px;
+  background-image: url('../../assets/img/site/bg.jpg');
+  background-position: center bottom;
+  background-size: cover;
+}

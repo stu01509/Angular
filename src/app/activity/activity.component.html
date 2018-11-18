@@ -1,0 +1,188 @@
+<div class="jumbotron jumbotron-fluid pt-5 pb-5 d-flex align-items-center activity">
+  <div class="container">
+    <h1 class="display-4 text-light font-weight-bold">藝文活動</h1>
+    <p class="lead text-light font-weight-bold">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <li class="list-group-item list-group-item-primary">活動類別</li>
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="list-program-list" data-toggle="list" href="#list-program"
+          role="tab" aria-controls="program" (click)="activityProgramData()">藝文演出活動</a>
+        <a class="list-group-item list-group-item-action" id="list-nogov-list" data-toggle="list" href="#list-nogov"
+          role="tab" aria-controls="nogov" (click)="noGovArtData()">民間藝文活動</a>
+        <a class="list-group-item list-group-item-action" id="list-news-list" data-toggle="list" href="#list-news"
+          role="tab" aria-controls="news" (click)="activityNewsData()">文化局活動消息</a>
+        <a class="list-group-item list-group-item-action" id="list-library-list" data-toggle="list" href="#list-library"
+          role="tab" aria-controls="library" (click)="activityLibraryData()">圖書館活動資訊</a>
+        <a class="list-group-item list-group-item-action" id="list-art-list" data-toggle="list" href="#list-art" role="tab"
+          aria-controls="art" (click)="artWorkData()">公共裝置藝術</a>
+      </div>
+    </div>
+
+    <div class="col-9">
+      <div class="tab-content" id="nav-tabContent">
+        <!-- 藝文演出活動 -->
+        <div class="tab-pane fade show active" id="list-program" role="tabpanel" aria-labelledby="list-program-list">
+          <div class="row">            
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-3" *ngFor="let activity of activityList let i=index;" [ngClass]="{'d-none': i > itemValue.program}">
+              <a href="#" data-toggle="modal" data-target="#activityDetail" (click)="showModal('program', activity)">
+                <div class="card" *ngIf="i<itemValue.program">
+                  <!-- <img class="card-img-top img-fluid" src="{{ site.Picture1 }}" [alt]="site.Picdescribe1"> -->
+                  <div class="card-body">
+                    <h5 class="card-title">{{ activity.PRGNAME }}</h5>
+                    <p class="card-text">{{ activity.ITEMDESC | slice:1:30 }}...</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <input type="button" class="btn btn-primary btn-lg btn-block" value="查看更多" (click)="addList('program')">
+        </div>
+        <!-- 民間藝文活動 -->
+        <div class="tab-pane fade" id="list-nogov" role="tabpanel" aria-labelledby="list-nogov-list">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-3" *ngFor="let activity of activityList let i=index;" [ngClass]="{'d-none': i > itemValue.nogov}">
+              <a href="#" data-toggle="modal" data-target="#activityDetail" (click)="showModal('nogov', activity)">
+                <div class="card" *ngIf="i<itemValue.nogov">
+                  <!-- <img class="card-img-top img-fluid" src="{{ site.Picture1 }}" [alt]="site.Picdescribe1"> -->
+                  <div class="card-body">
+                    <h5 class="card-title">{{ activity.PUBART_TITLE }}</h5>
+                    <p class="card-text">{{ activity.PUBART_DESC | slice:1:30 }}...</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <input type="button" class="btn btn-primary btn-lg btn-block" value="查看更多" (click)="addList('nogov')">
+        </div>
+        <!-- 文化局活動 -->
+        <div class="tab-pane fade" id="list-news" role="tabpanel" aria-labelledby="list-news-list">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-3" *ngFor="let activity of activityList let i=index;" [ngClass]="{'d-none': i > itemValue.news}">
+              <a href="#" data-toggle="modal" data-target="#activityDetail" (click)="showModal('news', activity)">
+                <div class="card" *ngIf="i<itemValue.news">
+                  <!-- <img class="card-img-top img-fluid" src="{{ site.Picture1 }}" [alt]="site.Picdescribe1"> -->
+                  <div class="card-body">
+                    <h5 class="card-title">{{ activity.NEWS_TITLE }}</h5>
+                    <p class="card-text">{{ activity.NEWS_DESC | slice:1:30 }}...</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <input type="button" class="btn btn-primary btn-lg btn-block" value="查看更多" (click)="addList('news')">
+        </div>
+        <!-- 圖書館活動資訊 -->
+        <div class="tab-pane fade" id="list-library" role="tabpanel" aria-labelledby="list-library-list">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-3" *ngFor="let activity of activityList let i=index;" [ngClass]="{'d-none': i > itemValue.library}">
+              <a href="#" data-toggle="modal" data-target="#activityDetail" (click)="showModal('library', activity)">
+                <div class="card" *ngIf="i<itemValue.library">
+                  <!-- <img class="card-img-top img-fluid" src="{{ site.Picture1 }}" [alt]="site.Picdescribe1"> -->
+                  <div class="card-body">
+                    <h5 class="card-title">{{ activity.Title }}</h5>
+                    <p class="card-text">{{ activity.Content | slice:1:30 }}...</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <input type="button" class="btn btn-primary btn-lg btn-block" value="查看更多" (click)="addList('library')">
+        </div>
+        <!-- 裝置藝術 -->
+        <div class="tab-pane fade" id="list-art" role="tabpanel" aria-labelledby="list-art-list">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-3" *ngFor="let activity of activityList let i=index;" [ngClass]="{'d-none': i > itemValue.art}">
+              <a href="#" data-toggle="modal" data-target="#activityDetail" (click)="showModal('art', activity)">
+                <div class="card" *ngIf="i<itemValue.art">
+                  <!-- <img class="card-img-top img-fluid" src="{{ site.Picture1 }}" [alt]="site.Picdescribe1"> -->
+                  <div class="card-body">
+                    <h5 class="card-title">{{ activity.PublicArt_Name }}</h5>
+                    <p class="card-text">{{ activity.PublicArt_Desc | slice:1:30 }}...</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <input type="button" class="btn btn-primary btn-lg btn-block" value="查看更多" (click)="addList('art')">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="activityDetail" tabindex="-1" role="dialog" aria-labelledby="activityModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="activityModalLabel">{{ modal.Name }}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img [src]="modal.Picture1" class="img-fluid img-rounded" [alt]="modal.Picdescribe1" [title]="modal.Picdescribe1">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <p>
+                  {{ modal.Description }}
+                </p>
+  
+              </div>
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col" colspan="4">景點資訊</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">地址：</th>
+                      <td>{{ modal.Add }}</td>
+                      <th scope="row">電話：</th>
+                      <td>{{ modal.Tel }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">營業時間：</th>
+                      <td>{{ modal.Opentime }}</td>
+                      <th scope="row">交通資訊：</th>
+                      <td>{{ modal.Travellinginfo || '無'}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">注意事項：</th>
+                      <td>{{ modal.Remarks || '無'}}</td>
+                      <th>收費價格：</th>
+                      <td>{{ modal.Ticketinfo || '無'}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" colspan="2">官方網站：</th>
+                      <td colspan="2">{{ modal.Website || '無'}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">資料更新日期：</th>
+                      <td>{{ modal.Changetime }}</td>
+                      <th scope="row">資料ID：</th>
+                      <td>{{ modal.id }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          <button type="button" class="btn btn-outline-danger">
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            收藏
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

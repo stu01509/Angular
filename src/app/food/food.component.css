@@ -1,0 +1,11 @@
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.food {
+  height: 450px;
+  background-image: url('https://images.pexels.com/photos/8313/food-eating-potatoes-beer-8313.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-position: center bottom;
+  background-size: cover;
+}

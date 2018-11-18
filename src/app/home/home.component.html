@@ -1,23 +1,193 @@
-<ngb-carousel *ngIf="images">
-  <ng-template ngbSlide>
-    <img [src]="images[0]" class="img-fluid" alt="Random first slide">
-    <div class="carousel-caption">
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+<div class="banner d-flex flex-column justify-content-around" [ngStyle]="bg_img">
+  <div class="container">
+    <div class="row d-flex justify-content-center align-items-center flex-column">
+      <header>
+        <h1 class="font-weight-bold display-4 text-center">{{ title }}</h1>
+      </header>
+      <h3 class="pt-3 display-4 text-center">{{ siteName }}</h3>
     </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <img [src]="images[1]" class="img-fluid" alt="Random second slide">
-    <div class="carousel-caption">
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <div class="scroll text-center pt-5">
+      <a href="#">
+        <h4 class="pt-5">
+          往下探索
+        </h4>
+        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+      </a>
     </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <img [src]="images[2]" class="img-fluid" alt="Random third slide">
-    <div class="carousel-caption">
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+  </div>
+</div>
+
+<section class="pt-5 pb-5 subject">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center pb-5">
+        <header>
+          <h2 class="section-title font-weight-bold">主題專區</h2>
+        </header>
+      </div>
+      <div class="col-6">
+        <a [routerLink]="['site']" routerLinkActive="hl">
+          <div class="card p-4 subject-card-food subject-card">
+            <div class="card-body d-flex justify-content-around align-items-center">
+              <h3 class="card-title">旅遊景點</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6">
+        <a [routerLink]="['food']" routerLinkActive="hl">
+          <div class="card p-4 subject-card-site subject-card">
+            <div class="card-body d-flex justify-content-around align-items-center">
+              <h3 class="card-title">美食小吃</h3>
+            </div>
+          </div>
+        </a>
+
+      </div>
     </div>
-  </ng-template>
-</ngb-carousel>
+  </div>
+</section>
+
+<section class="pt-5 pb-5 info">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center pb-5">
+        <header>
+          <h2 class="info-title font-weight-bold">資訊補給站</h2>
+        </header>
+      </div>
+      <div class="col-3 text-center">
+        <a href="https://khh.travel/Article.aspx?a=7515&l=1" target="_blank">
+          <i class="fa fa-credit-card info-icon icon-color-one p-3" aria-hidden="true"></i>
+          <h4 class=" pt-2 text-info font-weight-bold">高屏澎好玩卡</h4>
+        </a>
+      </div>
+      <div class="col-3 text-center">
+        <a href="https://khh.travel/Lodge.aspx?class=1&a=2051&l=1" target="_blank">
+          <i class="fa fa-home info-icon icon-color-two p-3" aria-hidden="true"></i>
+          <h4 class=" pt-2 text-info font-weight-bold">高雄好旅宿</h4>
+        </a>
+      </div>
+      <div class="col-3 text-center">
+        <a href="https://khh.travel/Article.aspx?a=2053&l=1">
+          <i class="fa fa-archive info-icon icon-color-three p-3" aria-hidden="true"></i>
+          <h4 class=" pt-2 text-info font-weight-bold">交通百寶箱</h4>
+
+        </a>
+      </div>
+      <div class="col-3 text-center">
+        <a href="https://khh.travel/Article.aspx?a=2065&l=1">
+          <i class="fa fa-bell info-icon icon-color-four p-3" aria-hidden="true"></i>
+          <h4 class=" pt-2 text-info font-weight-bold">旅遊小叮嚀</h4>
+
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="pt-5 pb-5 traffic">
+  <div class="container pt-5 pb-5">
+    <div class="row">
+      <div class="col-12 text-center pb-5">
+        <header>
+          <h2 class="section-title font-weight-bold">九種載具 遊高雄</h2>
+        </header>
+      </div>
+      <div class="col-3">
+        <ul class="list-group vehicle">
+          <li class="list-group-item active">九種交通工具</li>
+          <li class="list-group-item d-flex justify-content-around align-items-center" (click)="vehicleContent('lightrail')">
+            <img src="../../assets/img/home/vehicle/traffic_lightrail_blue.svg" class="img-fluid" alt="">
+            輕軌
+          </li>
+          <li class="list-group-item d-flex justify-content-around align-items-center" (click)="vehicleContent('bike')">
+            <img src="../../assets/img/home/vehicle/traffic_bike_blue.svg" class="img-fluid" alt="">
+            City Bike
+          </li>
+          <li class="list-group-item d-flex justify-content-around align-items-center" (click)="vehicleContent('doubledecker')">
+            <img src="../../assets/img/home/vehicle/traffic_doubledecker_blue.svg" class="img-fluid" alt="">
+            雙層巴士
+          </li>
+          <li class="list-group-item d-flex justify-content-around align-items-center" (click)="vehicleContent('bus')">
+            <img src="../../assets/img/home/vehicle/traffic_bus_blue.svg" class="img-fluid" alt="">
+            觀光公車
+          </li>
+          <li class="list-group-item d-flex justify-content-around align-items-center" (click)="vehicleContent('loveboat')">
+            <img src="../../assets/img/home/vehicle/traffic_loveboat_blue.svg" class="img-fluid" alt="">
+            太陽能愛之船
+          </li>
+          <li class="list-group-item d-flex justify-content-around align-items-center" (click)="vehicleContent('ships')">
+            <img src="../../assets/img/home/vehicle/traffic_ships_blue.svg" class="img-fluid" alt="">
+            渡輪
+          </li>
+          <li class="list-group-item d-flex justify-content-around align-items-center" (click)="vehicleContent('yacht')">
+            <img src="../../assets/img/home/vehicle/traffic_yacht_blue.svg" class="img-fluid" alt="">
+            文化遊艇
+          </li>
+          <li class="list-group-item d-flex justify-content-around align-items-center" (click)="vehicleContent('duckboat')">
+            <img src="../../assets/img/home/vehicle/traffic_duckboat_blue.svg" class="img-fluid" alt="">
+            鴨子船
+          </li>
+          <li class="list-group-item d-flex justify-content-around align-items-center" (click)="vehicleContent('ferry')">
+            <img src="../../assets/img/home/vehicle/traffic_ferry_blue.svg" class="img-fluid" alt="">
+            觀光郵輪
+          </li>
+        </ul>
+      </div>
+      <div class="col-9">
+        <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+          <div class="card-body d-flex flex-column align-items-start">
+            <div class="traffic-header w-100 d-flex justify-content-between">
+              <div class="traffic-intro">
+                <h3 class="mb-1">{{vehicle.name}}</h3>
+                <div class="mb-1 text-muted">{{vehicle.date}}</div>
+              </div>
+              <div class="traffic-icon">
+                <img [src]="vehicle.icon" class="img-fluid" alt="">
+              </div>
+            </div>
+            <p class="card-text mb-auto">
+              {{vehicle.des}}
+            </p>
+            <strong class="d-inline-block mb-2 text-primary">營運地點 : {{vehicle.area}}</strong>
+            <img class="flex-auto img-fluid traffic-img" [src]="vehicle.img" alt="">
+            <a [href]="vehicle.url" target="_blank" class="btn btn-primary mt-3" role="button" aria-pressed="true">More Info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pt-5 pb-5 vid">
+  <div class="container pt-5 pb-5">
+    <div class="row">
+      <div class="col-12 text-center pb-5">
+        <header>
+          <h2 class="vid-title font-weight-bold text-primary">影音專區</h2>
+        </header>
+      </div>
+      <div class="col-12">
+        <div id="carouselVideo" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item" *ngFor="let videoUrl of videoUrlList let i = index" [ngClass]="{'active' : i == videoUrlList.length - 1}">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" [src]="ytEmbed(videoUrl)"></iframe>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselVideo" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselVideo" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

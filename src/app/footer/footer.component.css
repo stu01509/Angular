@@ -1,0 +1,13 @@
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer {
+  background-color: rgb(7, 161, 233);
+}
+
+.footer ul {
+  list-style: none;
+}
+

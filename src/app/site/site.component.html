@@ -1,0 +1,98 @@
+<div class="jumbotron jumbotron-fluid pt-5 pb-5 d-flex align-items-center site">
+  <div class="container">
+    <h1 class="display-4 text-light font-weight-bold">景點一覽</h1>
+    <p class="lead text-light font-weight-bold">收錄高雄市350筆的景點資料，北有達到深山幽谷的那瑪夏，南有各種樣式的海景港口，
+      景觀豐富，無論是具有歷史意義的古蹟景點，或是具有現代感與科技結合的景點，都能豐富你的新視野.
+    </p>
+    <input class="form-control " type="search" placeholder="景點搜尋" aria-label="Search" (keyup)="search($event)">
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-3" *ngFor="let site of tempList let i=index;" [ngClass]="{'d-none': i > itemValue}">
+      <a href="#" data-toggle="modal" data-target="#siteDetail" (click)="showModal(site)">
+        <div class="card" *ngIf="i<itemValue">
+          <img class="card-img-top img-fluid" src="{{ site.Picture1 }}" [alt]="site.Picdescribe1">
+          <div class="card-body">
+            <h5 class="card-title">{{ site.Name }}</h5>
+            <p class="card-text">{{ site.Description | slice:1:30 }}...</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <input type="button" class="btn btn-primary btn-md btn-block mb-5" value="查看更多" (click)="addList()">
+</div>
+
+<div class="modal fade" id="siteDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ modal.Name }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img [src]="modal.Picture1" class="img-fluid img-rounded" [alt]="modal.Picdescribe1" [title]="modal.Picdescribe1">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p>
+                {{ modal.Description }}
+              </p>
+
+            </div>
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col" colspan="4">景點資訊</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">地址：</th>
+                    <td>{{ modal.Add }}</td>
+                    <th scope="row">電話：</th>
+                    <td>{{ modal.Tel }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">營業時間：</th>
+                    <td>{{ modal.Opentime }}</td>
+                    <th scope="row">交通資訊：</th>
+                    <td>{{ modal.Travellinginfo || '無'}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">注意事項：</th>
+                    <td>{{ modal.Remarks || '無'}}</td>
+                    <th>收費價格：</th>
+                    <td>{{ modal.Ticketinfo || '無'}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" colspan="2">官方網站：</th>
+                    <td colspan="2">{{ modal.Website || '無'}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">資料更新日期：</th>
+                    <td>{{ modal.Changetime }}</td>
+                    <th scope="row">資料ID：</th>
+                    <td>{{ modal.id }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+        <button type="button" class="btn btn-outline-danger">
+          <i class="fa fa-heart" aria-hidden="true"></i>
+          收藏
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,146 @@
+a{
+    text-decoration: none;
+    color: #fff;
+}
+/* Banner Section */
+.banner {
+    min-height: 80vh;
+    width: 100%;
+    padding: 70px 0;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    text-shadow: 0 0 3px #161615
+}
+
+/* Scrool Animation */
+.scroll {
+    position:relative;
+    animation:myfirst 2s infinite;
+    animation-direction:alternate;
+    -webkit-animation:myfirst 2s infinite;
+    -webkit-animation-direction:alternate;
+}
+
+@keyframes myfirst
+{
+    0%   {top:0px;}
+    25%  {top:0px;}
+    50%  {top:50px;}
+    75%  {top:50px;}
+    100% {top:0px;}
+}
+@-webkit-keyframes myfirst
+{
+    0%   {top:0px;}
+    25%  {top:0px;}
+    50%  {top:50px;}
+    75%  {top:50px;}
+    100% {top:0px;}
+}
+
+/* Subject Section */
+
+.subject {
+    background-image: url('../../assets/img/home/bg.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.section-title {
+    font-size: 42px;
+    color: #fff;
+    text-shadow: 0 0 3px #161615
+}
+
+.subject-card-food {
+    background-image: url('../../assets/img/home/food.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 250px;
+}
+
+.subject-card-site {
+    background-image: url('../../assets/img/home/site.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 250px;
+}
+
+.subject-card{
+    border-radius: 5%;
+    transition: all .3s;
+}
+
+.subject-card:hover{
+    transform: rotate(5deg)
+}
+
+/* Info Section */
+.info {
+    background-color: #e6e6e6;
+}
+
+.info-title{
+    font-size: 42px;
+    background: -webkit-linear-gradient(45deg, #d31e85, #30a3e5);
+    -webkit-background-clip: text; /* Required */
+    -webkit-text-fill-color: transparent;
+}
+
+.info-icon {
+    font-size: 70px;
+    background-color: #fff;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    position: relative;
+    transition: transform .3s;
+}
+
+.info-icon:hover {
+    transform: translateY(-15%);
+}
+
+.icon-color-one {
+  color: #fe4e75;
+}
+
+.icon-color-two {
+  color: #81d4c2;
+}
+
+.icon-color-three {
+  color: #50c5f0;
+}
+
+.icon-color-four {
+  color: #cdaeed;
+}
+
+/* Traffic Section */
+.traffic {
+    background-image: url('../../assets/img/home/traffic-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+.vehicle {
+    cursor: pointer;
+}
+
+.vehicle img,
+.traffic-icon img {
+    height: 50px;
+    width: 50px;
+}
+
+.traffic-img {
+    height: 500px;
+}
+
+/* Video Section */
+
+.vid-title {
+    font-size: 42px;
+    text-shadow: 0 0 2px #161615
+}

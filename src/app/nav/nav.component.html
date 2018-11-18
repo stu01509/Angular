@@ -1,81 +1,37 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top primary">
-  <a class="navbar-brand" href="#">Angular</a>
-  <button class="navbar-toggler hidden-sm-up" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top primary" appNavShrink>
+  <a class="navbar-brand" [routerLink]="['/']">Fun <span class="secondary">高雄</span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown" ngbDropdown>
-        <a class="nav-link dropdown-toggle" id="id01" href="#" ngbDropdownToggle>Files</a>
-        <div class="dropdown-menu" aria-labelledby="id01" ngbDropdownMenu>
-          <a class="dropdown-item" href="#">HTML</a>
-          <a class="dropdown-item" href="#">TS</a>
-          <a class="dropdown-item" href="#">JS</a>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['site']" routerLinkActive="hl">景點簡介</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['food']" routerLinkActive="hl">美食小吃</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['activity']" routerLinkActive="hl">藝文活動</a>
+      </li>
+      <li class="nav-item active dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          交通資訊
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['bus']">公車資訊</a>
+          <a class="dropdown-item" [routerLink]="['bike']">公共單車資訊</a>
         </div>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">                
-          <a class="nav-link" [routerLink]="['/product']">Product</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"[routerLink]="['/about']">About</a>
-        </li>
-        <li class="nav-item dropdown">
-          <div ngbDropdown class="d-inline-block">
-            <a class="nav-link dropdown-toggle" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</a>
-            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <button class="dropdown-item">Action - 1</button>
-              <button class="dropdown-item">Another Action</button>
-              <button class="dropdown-item">Something else is here</button>
-            </div>
-          </div>
-        </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link" [routerLink]="['/about']">關於</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <input class="form-control mr-sm-2" type="search" placeholder="搜尋點東西吧!" aria-label="Search">
+      <button class="btn btn-outline-light secondary my-2 my-sm-0" type="submit">搜尋</button>
     </form>
   </div>
 </nav>
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="row">
-      <div class="col">
-        <div ngbDropdown class="d-inline-block">
-          <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
-          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-            <button class="dropdown-item">Action - 1</button>
-            <button class="dropdown-item">Another Action</button>
-            <button class="dropdown-item">Something else is here</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        
-    </div>
-  </nav> -->

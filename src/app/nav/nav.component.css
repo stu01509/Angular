@@ -1,3 +1,22 @@
 .primary {
-  background-color: #0680eb !important;
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+.secondary {
+  color: #d31e85 !important
+}
+
+.change{
+  background-color: #30a3e5 !important;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, .4);
+  transition: all ease .5s;
+}
+
+.hl {
+  border-bottom: 1px solid rgb(233, 17, 161);
+}
+
+@media (max-width: 768px) {
+  .primary {
+    background-color: #30a3e5 !important;
+  }
 }
