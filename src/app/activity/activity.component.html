@@ -1,7 +1,7 @@
 <div class="jumbotron jumbotron-fluid pt-5 pb-5 d-flex align-items-center activity">
   <div class="container">
     <h1 class="display-4 text-light font-weight-bold">藝文活動</h1>
-    <p class="lead text-light font-weight-bold">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    <p class="lead text-light font-weight-bold">多元化的展覽內容與相關活動，培養觀眾美感經驗，及提升藝術欣賞水平。</p>
   </div>
 </div>
 
@@ -86,7 +86,6 @@
             <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-3" *ngFor="let activity of activityList let i=index;" [ngClass]="{'d-none': i > itemValue.library}">
               <a href="#" data-toggle="modal" data-target="#activityDetail" (click)="showModal('library', activity)">
                 <div class="card" *ngIf="i<itemValue.library">
-                  <!-- <img class="card-img-top img-fluid" src="{{ site.Picture1 }}" [alt]="site.Picdescribe1"> -->
                   <div class="card-body">
                     <h5 class="card-title">{{ activity.Title }}</h5>
                     <p class="card-text">{{ activity.Content | slice:1:30 }}...</p>
@@ -97,13 +96,14 @@
           </div>
           <input type="button" class="btn btn-primary btn-lg btn-block" value="查看更多" (click)="addList('library')">
         </div>
+
         <!-- 裝置藝術 -->
         <div class="tab-pane fade" id="list-art" role="tabpanel" aria-labelledby="list-art-list">
           <div class="row">
             <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-3" *ngFor="let activity of activityList let i=index;" [ngClass]="{'d-none': i > itemValue.art}">
               <a href="#" data-toggle="modal" data-target="#activityDetail" (click)="showModal('art', activity)">
                 <div class="card" *ngIf="i<itemValue.art">
-                  <!-- <img class="card-img-top img-fluid" src="{{ site.Picture1 }}" [alt]="site.Picdescribe1"> -->
+                  <img class="card-img-top img-fluid" src="{{ activity.PublicArt_Image }}" [alt]="activity.PublicArt_Name">
                   <div class="card-body">
                     <h5 class="card-title">{{ activity.PublicArt_Name }}</h5>
                     <p class="card-text">{{ activity.PublicArt_Desc | slice:1:30 }}...</p>

@@ -17,7 +17,7 @@ export class BikeInfoComponent implements OnInit {
 
   ngOnInit() {
     this.bikeService.getBikeData()
-      .subscribe(data => this.bikeList = data,
+      .subscribe(data => console.log(data),
         error => this.errMsg);
   }
 

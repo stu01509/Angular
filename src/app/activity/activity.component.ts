@@ -125,6 +125,7 @@ export class ActivityComponent implements OnInit {
       this.modal.ticketPrice = activityData.PUBART_TICKETPRICE;
       this.modal.ticketUrl = activityData.PUBART_TICKETURL;
       this.modal.website = activityData.PUBART_URL;
+
     } else if (type === 'news') {
 
       this.modal.titile  = activityData.NEWS_TITLE;
@@ -139,6 +140,7 @@ export class ActivityComponent implements OnInit {
       this.modal.ticketPrice = activityData.PUBART_TICKETPRICE;
       this.modal.ticketUrl = activityData.NEWS_PRICE;
       this.modal.website = activityData.NEWS_URL;
+
     } else if (type === 'library') {
 
       this.modal.titile  = activityData.Title;
@@ -149,8 +151,14 @@ export class ActivityComponent implements OnInit {
       this.modal.date = activityData.EndDate;
       this.modal.id = activityData.ID;
       this.modal.website = activityData.OriginalURL;
+
     } else if (type === 'art') {
 
+      this.modal.titile  = activityData.PublicArt_Name;
+      this.modal.imgUrl = activityData.PublicArt_Image[0];
+      this.modal.desc = activityData.PublicArt_Desc;
+      this.modal.add = activityData.PublicArt_Place;
+      this.modal.id = activityData.PublicArt_INDEX;
     }
 
 
