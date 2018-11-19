@@ -7,6 +7,7 @@ import { FoodComponent } from './food/food.component';
 import { TrafficComponent } from './traffic/traffic.component';
 import { ActivityComponent } from './activity/activity.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { IGComponent } from './ig/ig.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'food', component: FoodComponent},
   {path: 'activity', component: ActivityComponent},
   {path: 'traffic', component: TrafficComponent},
+  {path: 'igwall', component: IGComponent},
   {path: '**', component: NotFoundComponent}
 
 ];
@@ -30,5 +32,6 @@ export const routeComponent = [
   FoodComponent,
   TrafficComponent,
   ActivityComponent,
+  IGComponent,
   NotFoundComponent,
 ];
