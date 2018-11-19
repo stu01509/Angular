@@ -6,8 +6,6 @@ import { SiteComponent } from './site/site.component';
 import { FoodComponent } from './food/food.component';
 import { TrafficComponent } from './traffic/traffic.component';
 import { ActivityComponent } from './activity/activity.component';
-import { BusInfoComponent } from './bus-info/bus-info.component';
-import { BikeInfoComponent } from './bike-info/bike-info.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
@@ -17,8 +15,6 @@ const routes: Routes = [
   {path: 'food', component: FoodComponent},
   {path: 'activity', component: ActivityComponent},
   {path: 'traffic', component: TrafficComponent},
-  {path: 'bus', component: BusInfoComponent},
-  {path: 'bike', component: BikeInfoComponent},
   {path: '**', component: NotFoundComponent}
 
 ];
@@ -34,7 +30,5 @@ export const routeComponent = [
   FoodComponent,
   TrafficComponent,
   ActivityComponent,
-  BusInfoComponent,
-  BikeInfoComponent,
   NotFoundComponent,
 ];

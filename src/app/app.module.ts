@@ -16,8 +16,6 @@ import { TrafficComponent } from './traffic/traffic.component';
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ScrollEventDirective } from './scroll-event.directive';
-import { BusInfoComponent } from './bus-info/bus-info.component';
-import { BikeInfoComponent } from './bike-info/bike-info.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -33,8 +31,6 @@ import { FooterComponent } from './footer/footer.component';
     AboutComponent,
     NotFoundComponent,
     ScrollEventDirective,
-    BusInfoComponent,
-    BikeInfoComponent,
     FooterComponent,
   ],
   imports: [
