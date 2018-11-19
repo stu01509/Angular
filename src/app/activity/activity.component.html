@@ -25,6 +25,7 @@
 
     <div class="col-9">
       <div class="tab-content" id="nav-tabContent">
+
         <!-- 藝文演出活動 -->
         <div class="tab-pane fade show active" id="list-program" role="tabpanel" aria-labelledby="list-program-list">
           <div class="row">            
@@ -60,13 +61,14 @@
           </div>
           <input type="button" class="btn btn-primary btn-lg btn-block" value="查看更多" (click)="addList('nogov')">
         </div>
+
         <!-- 文化局活動 -->
         <div class="tab-pane fade" id="list-news" role="tabpanel" aria-labelledby="list-news-list">
           <div class="row">
             <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-3" *ngFor="let activity of activityList let i=index;" [ngClass]="{'d-none': i > itemValue.news}">
               <a href="#" data-toggle="modal" data-target="#activityDetail" (click)="showModal('news', activity)">
                 <div class="card" *ngIf="i<itemValue.news">
-                  <!-- <img class="card-img-top img-fluid" src="{{ site.Picture1 }}" [alt]="site.Picdescribe1"> -->
+                  <img class="card-img-top img-fluid" src="{{ activity.NEWS_IMAGE }}" [alt]="activity.NEWS_TITLE">
                   <div class="card-body">
                     <h5 class="card-title">{{ activity.NEWS_TITLE }}</h5>
                     <p class="card-text">{{ activity.NEWS_DESC | slice:1:30 }}...</p>
@@ -77,6 +79,7 @@
           </div>
           <input type="button" class="btn btn-primary btn-lg btn-block" value="查看更多" (click)="addList('news')">
         </div>
+        
         <!-- 圖書館活動資訊 -->
         <div class="tab-pane fade" id="list-library" role="tabpanel" aria-labelledby="list-library-list">
           <div class="row">

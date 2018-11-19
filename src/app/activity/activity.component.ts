@@ -127,8 +127,28 @@ export class ActivityComponent implements OnInit {
       this.modal.website = activityData.PUBART_URL;
     } else if (type === 'news') {
 
+      this.modal.titile  = activityData.NEWS_TITLE;
+      this.modal.imgUrl = activityData.NEWS_IMAGE;
+      this.modal.desc = activityData.NEWS_DESC;
+      this.modal.act = activityData.NEWS_ACTUNIT;
+      this.modal.group = activityData.NEWS_MANAGEUNIT;
+      this.modal.date = activityData.NEWS_ENDDATE;
+      this.modal.startTime = activityData.PRGSTIME;
+      this.modal.endTime = activityData.PRGETIME;
+      this.modal.id = activityData.NEWS_INDEX;
+      this.modal.ticketPrice = activityData.PUBART_TICKETPRICE;
+      this.modal.ticketUrl = activityData.NEWS_PRICE;
+      this.modal.website = activityData.NEWS_URL;
     } else if (type === 'library') {
 
+      this.modal.titile  = activityData.Title;
+      this.modal.desc = activityData.Content;
+      this.modal.tel = activityData.PRGCONT;
+      this.modal.add = activityData.Unit;
+      this.modal.group = activityData.Unit;
+      this.modal.date = activityData.EndDate;
+      this.modal.id = activityData.ID;
+      this.modal.website = activityData.OriginalURL;
     } else if (type === 'art') {
 
     }
