@@ -17,6 +17,7 @@ import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ScrollEventDirective } from './scroll-event.directive';
 import { FooterComponent } from './footer/footer.component';
+import { IGComponent } from './ig/ig.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FooterComponent } from './footer/footer.component';
     NotFoundComponent,
     ScrollEventDirective,
     FooterComponent,
+    IGComponent,
   ],
   imports: [
     BrowserModule,
