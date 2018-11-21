@@ -27,25 +27,25 @@ export class ActivityService {
 
   getActivityNogovArtData(): Observable<ActivityNogovArt[]> {
     console.log('Get No Gov Art Data');
-    return this.http.get<ActivityNogovArt[]>('http://opendata.khcc.gov.tw/public/OD_khcc_pubart.ashx')
+    return this.http.get<ActivityNogovArt[]>('https://opendata.khcc.gov.tw/public/OD_khcc_pubart.ashx')
           .pipe(catchError(this.errorHandler));
   }
 
   getActivityNewsData(): Observable<ActivityNews[]> {
     console.log('Get KHCC News Data');
-    return this.http.get<ActivityNews[]>('http://opendata.khcc.gov.tw/public/OD_khcc_news.ashx')
+    return this.http.get<ActivityNews[]>('https://opendata.khcc.gov.tw/public/OD_khcc_news.ashx')
           .pipe(catchError(this.errorHandler));
   }
 
   getActivityLibraryData(): Observable<ActivityLibrary[]> {
     console.log('Get Library Data');
-    return this.http.get<ActivityLibrary[]>('http://opendata.khcc.gov.tw/public/OD_ksml_news.ashx')
+    return this.http.get<ActivityLibrary[]>('https://opendata.khcc.gov.tw/public/OD_ksml_news.ashx')
           .pipe(catchError(this.errorHandler));
   }
 
   getArtWorkData(): Observable<ArtWork[]> {
     console.log('Get ArtWork Data');
-    return this.http.get<ArtWork[]>('http://opendata.khcc.gov.tw/public/OD_PublicArt.ashx')
+    return this.http.get<ArtWork[]>('https://opendata.khcc.gov.tw/public/OD_PublicArt.ashx')
           .pipe(catchError(this.errorHandler));
   }
 
