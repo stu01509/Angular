@@ -1,4 +1,6 @@
-<div class="jumbotron jumbotron-fluid pt-5 pb-5 d-flex align-items-center activity">
+<div class="go-top" (click)="scrollTo(top)">^</div>
+
+<div class="jumbotron jumbotron-fluid pt-5 pb-5 d-flex align-items-center activity" #top>
   <div class="container">
     <h1 class="display-4 text-light font-weight-bold">藝文活動</h1>
     <p class="lead text-light font-weight-bold">多元化的展覽內容與相關活動，培養觀眾美感經驗，及提升藝術欣賞水平。</p>
@@ -7,7 +9,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-3">
+    <div class="col-12 col-sm-12 col-md-3">
       <li class="list-group-item list-group-item-primary">活動類別</li>
       <div class="list-group" id="list-tab" role="tablist">
         <a class="list-group-item list-group-item-action active" id="list-program-list" data-toggle="list" href="#list-program"
@@ -23,9 +25,8 @@
       </div>
     </div>
 
-    <div class="col-9">
+    <div class="col-12 col-sm-12 col-md-9">
       <div class="tab-content" id="nav-tabContent">
-
         <!-- 藝文演出活動 -->
         <div class="tab-pane fade show active" id="list-program" role="tabpanel" aria-labelledby="list-program-list">
           <div class="row">            
@@ -41,7 +42,7 @@
               </a>
             </div>
           </div>
-          <input type="button" class="btn btn-primary btn-lg btn-block" value="查看更多" (click)="addList('program')">
+          <input type="button" class="btn btn-primary btn-md btn-block mb-5" value="查看更多" (click)="addList('program')">
         </div>
 
         <!-- 民間藝文活動 -->
@@ -59,7 +60,7 @@
               </a>
             </div>
           </div>
-          <input type="button" class="btn btn-primary btn-lg btn-block" value="查看更多" (click)="addList('nogov')">
+          <input type="button" class="btn btn-primary btn-md btn-block mb-5" value="查看更多" (click)="addList('nogov')">
         </div>
 
         <!-- 文化局活動 -->
@@ -77,7 +78,7 @@
               </a>
             </div>
           </div>
-          <input type="button" class="btn btn-primary btn-lg btn-block" value="查看更多" (click)="addList('news')">
+          <input type="button" class="btn btn-primary btn-md btn-block mb-5" value="查看更多" (click)="addList('news')">
         </div>
         
         <!-- 圖書館活動資訊 -->
@@ -94,7 +95,7 @@
               </a>
             </div>
           </div>
-          <input type="button" class="btn btn-primary btn-lg btn-block" value="查看更多" (click)="addList('library')">
+          <input type="button" class="btn btn-primary btn-md btn-block mb-5" value="查看更多" (click)="addList('library')">
         </div>
 
         <!-- 裝置藝術 -->
@@ -112,7 +113,7 @@
               </a>
             </div>
           </div>
-          <input type="button" class="btn btn-primary btn-lg btn-block" value="查看更多" (click)="addList('art')">
+          <input type="button" class="btn btn-primary btn-md btn-block mb-5" value="查看更多" (click)="addList('art')">
         </div>
       </div>
     </div>

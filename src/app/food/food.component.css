@@ -5,7 +5,21 @@ a {
 
 .food {
   height: 450px;
-  background-image: url('https://images.pexels.com/photos/8313/food-eating-potatoes-beer-8313.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-image: url('../../assets/img/foodBg.jpg');
   background-position: center bottom;
   background-size: cover;
+}
+
+.go-top {
+  position: fixed;
+  right: 50px;
+  bottom: 30px;
+  padding: 10px 20px 10px 20px;
+  font-size: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  cursor: pointer;
+  z-index: 999;
+  border: 1px solid #000;
+  border-radius: 30px;
 }

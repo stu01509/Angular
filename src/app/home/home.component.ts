@@ -171,4 +171,9 @@ export class HomeComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${videoUrl}`);
   }
 
+  scrollTo(el) {
+    el.scrollIntoView({behavior: 'smooth'});
+  }
+
+
 }

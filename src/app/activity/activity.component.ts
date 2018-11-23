@@ -34,6 +34,7 @@ export class ActivityComponent implements OnInit {
     ticketPrice: '',
     ticketUrl: '',
     website: '',
+    changetime: '',
   };
 
 
@@ -162,5 +163,9 @@ export class ActivityComponent implements OnInit {
     }
 
 
+  }
+
+  scrollTo(el) {
+    el.scrollIntoView({behavior: 'smooth'});
   }
 }

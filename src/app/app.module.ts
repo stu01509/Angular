@@ -19,6 +19,7 @@ import { ScrollEventDirective } from './scroll-event.directive';
 import { FooterComponent } from './footer/footer.component';
 import { IGComponent } from './ig/ig.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

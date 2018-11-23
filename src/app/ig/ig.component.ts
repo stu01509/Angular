@@ -98,4 +98,8 @@ export class IGComponent implements OnInit {
       error => console.log(error));
   }
 
+  scrollTo(el) {
+    el.scrollIntoView({behavior: 'smooth'});
+  }
+
 }

@@ -121,4 +121,8 @@ export class SiteComponent implements OnInit {
     this.modal.Changetime = site.Changetime;
   }
 
+  scrollTo(el) {
+    el.scrollIntoView({behavior: 'smooth'});
+  }
+
 }

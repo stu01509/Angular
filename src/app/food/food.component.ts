@@ -127,6 +127,8 @@ export class FoodComponent implements OnInit {
     this.modal.Changetime = food.Changetime;
   }
 
-
+  scrollTo(el) {
+    el.scrollIntoView({behavior: 'smooth'});
+  }
 
 }
