@@ -1,0 +1,11 @@
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.ig {
+  height: 450px;
+  background-image: url('https://images.pexels.com/photos/266246/pexels-photo-266246.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-position: center bottom;
+  background-size: cover;
+}

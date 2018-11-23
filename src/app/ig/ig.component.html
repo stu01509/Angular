@@ -1,3 +1,126 @@
-<p>
-  ig works!
-</p>
+<div class="jumbotron jumbotron-fluid pt-5 pb-5 d-flex align-items-center ig">
+  <div class="container">
+    <h1 class="display-4 text-light font-weight-bold">Instagram Wall</h1>
+    <p class="lead text-light font-weight-bold">Searching on Instagram
+    </p>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search Bar" aria-label="Search Bar" aria-describedby="button-addon2"[(ngModel)]="searchBar">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button" id="button-addon2"><i class="fa fa-search" aria-hidden="true" (click)="searchIG()"></i></button>
+        </div>
+      </div>
+      <button class="btn btn-light text-muted m-1" (click)="btnSearch(searchItem[0])">{{ searchItem[0] }}</button>
+      <button class="btn btn-light text-muted m-1" (click)="btnSearch(searchItem[1])">{{ searchItem[1] }}</button>
+      <button class="btn btn-light text-muted m-1" (click)="btnSearch(searchItem[2])">{{ searchItem[2] }}</button>
+      <button class="btn btn-light text-muted m-1" (click)="btnSearch(searchItem[3])">{{ searchItem[3] }}</button>
+      <button class="btn btn-light text-muted m-1" (click)="btnSearch(searchItem[4])">{{ searchItem[4] }}</button>
+      <button class="btn btn-light text-muted m-1" (click)="btnSearch(searchItem[5])">{{ searchItem[5] }}</button>
+      <button class="btn btn-light text-muted m-1" (click)="btnSearch(searchItem[6])">{{ searchItem[6] }}</button>
+      <button class="btn btn-light text-muted m-1" (click)="btnSearch(searchItem[7])">{{ searchItem[7] }}</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-muted font-italic">Top Post</h2>
+      <hr>
+    </div>
+    <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-3" *ngFor="let post of topPost let i=index;">
+      <a href="#" data-toggle="modal" data-target="#igDetail" (click)="showModal(post)">
+        <div class="card">
+          <img class="card-img-top img-fluid" src="{{ post.node.thumbnail_src }}">
+          <div class="card-body">
+            <h5 class="card-text text-info">{{ post.node.edge_media_to_caption.edges[0].node.text | slice:1:30 }}...</h5>
+            <div class="d-flex justify-content-between">
+              <p class="text-danger"><i class="fa fa-heart p-2" aria-hidden="true"></i>{{ post.node.edge_liked_by.count
+                }}</p>
+              <p class="text-primary"><i class="fa fa-commenting-o p-2" aria-hidden="true"></i>{{
+                post.node.edge_media_to_comment.count }}</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-muted font-italic">Recent Post</h2>
+      <hr>
+    </div>
+    <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-3" *ngFor="let post of normalPost let i=index;" [ngClass]="{'d-none': i > itemValue}">
+      <a href="#" data-toggle="modal" data-target="#igDetail" (click)="showModal(post)">
+        <div class="card" *ngIf="i<itemValue">
+          <img class="card-img-top img-fluid" src="{{ post.node.thumbnail_src }}">
+          <div class="card-body">
+            <h5 class="card-text text-info">{{ post.node.edge_media_to_caption.edges[0].node.text | slice:1:30 }}...</h5>
+            <div class="d-flex justify-content-between">
+              <p class="text-danger">
+                <i class="fa fa-heart p-2" aria-hidden="true"></i>
+                {{ post.node.edge_liked_by.count}}
+              </p>
+              <p class="text-primary">
+                <i class="fa fa-commenting-o p-2" aria-hidden="true"></i>
+                {{ post.node.edge_media_to_comment.count }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <input type="button" class="btn btn-primary btn-md btn-block mb-5" value="查看更多" (click)="addList()">
+</div>
+
+<div class="modal fade" id="igDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img [src]="modal.pic" class="img-fluid img-rounded" alt="Instagram Picture" title="Instagram Picture">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p>
+                {{ modal.desc }}
+              </p>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col" colspan="4">Post Detail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><i class="fa fa-heart p-2 text-danger" aria-hidden="true"></i>Like：</th>
+                    <td>{{ modal.like }}</td>
+                    <th scope="row"><i class="fa fa-commenting-o p-2 text-primary" aria-hidden="true"></i>Comment：</th>
+                    <td>{{ modal.comment }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" colspan="2">Link</th>
+                    <td colspan="2"><a [href]="modal.link">{{ modal.link }}</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -21,7 +21,7 @@ export class ActivityService {
 
   getActivityProgramData(): Observable<ActivityProgram[]> {
     console.log('Get Program Data');
-    return this.http.get<ActivityProgram[]>('http://opendata.khcc.gov.tw/public/OD_art_program.ashx')
+    return this.http.get<ActivityProgram[]>('https://opendata.khcc.gov.tw/public/OD_art_program.ashx')
           .pipe(catchError(this.errorHandler));
   }
 
