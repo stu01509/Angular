@@ -6,6 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule, routeComponent } from './app-routing.module';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from './../environments/environment';
+
+
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
@@ -18,6 +24,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ScrollEventDirective } from './scroll-event.directive';
 import { FooterComponent } from './footer/footer.component';
 import { IGComponent } from './ig/ig.component';
+import { from } from 'rxjs';
 
 
 @NgModule({
@@ -41,6 +48,8 @@ import { IGComponent } from './ig/ig.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -22,5 +22,21 @@
         <a class="nav-link" [routerLink]="['/about']">關於</a>
       </li>
     </ul>
+    <ul class="navbar-nav ml-auto">
+      <div *ngIf="afAuth.authState | async as user; else login" style="display: inherit;">
+        <li class="nav-item active">
+          <a class="nav-link">{{user.displayName}}</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" (click)="logout()">登出</a>
+        </li>
+      </div>
+      <ng-template #login>
+        <li class="nav-item active">
+          <a class="nav-link" (click)="googleSignIn()">登入</a>
+        </li>
+      </ng-template>
+    </ul>
   </div>
 </nav>
+
